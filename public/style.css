@@ -1,0 +1,125 @@
+
+.container{
+    height: 1000px;
+    position: fixed;
+    background-color: darkorange;
+    width: 100%;
+}
+
+.menu-div{
+    position: relative;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 300px;
+
+}
+
+.go-to-page-btn {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    background-color: grey;
+    border-width: 2px;
+    border-style: solid;
+    font-size: large;
+}
+
+.deactivated-btn{
+    position: relative;
+    width: 300px;
+    height: 50px;
+    background-color: grey;
+    border-width: 2px;
+    border-style: solid;
+    font-size: large;
+}
+
+.btn_quit{
+    font-size: xx-large;
+}
+
+.choose_txt {
+    color: green;
+}
+
+.header_title {
+    font-size: 3em;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    padding-bottom: 3px;
+
+}
+
+.title {
+    text-align: center;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 72px;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+}
+
+.title-lobby {
+    margin-left: 37%;
+    margin-right: 37%;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 72px;
+    text-transform: uppercase;
+}
+
+.list-of-users-in-joined-room-div {
+    height: 190px;
+    width: 300px;
+    background-color: cadetblue;
+    border-width: 5px;
+    border-style: dashed;
+    margin-left: 600px;
+    margin-top: 80px;
+}
+.name-list-in-join-room {
+    height: fit-content;
+    width: 290px;
+    background-color: cadetblue;
+    border-width: 5px;
+    border-style: dashed;
+    margin-left: 600px;
+    margin-right: auto;
+    margin-top: 0px;
+
+}
+
+.start_Game-online-btn{
+    width: 310px;
+    height: 60px;
+    background-color: green;
+    margin-left: 600px;
+    margin-top: 150px;
+    font-size: 30px;
+}
+
+.gameBoard {
+    margin-top: 0px;
+    width: 600px;
+    border-width: 5px;
+    border-style: solid;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+.question-txt{
+    text-align: center;
+    font-size: x-large;
+}
+.answer-btn{
+    width: 600px;
+    height: 50px;
+    font-size: x-large;
+}
+
+
