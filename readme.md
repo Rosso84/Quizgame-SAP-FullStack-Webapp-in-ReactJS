@@ -1,7 +1,7 @@
 
-#Exam in web-application and Api design
+# Exam in web-application and Api design
 
-###Concept
+### Concept
 The exam is about building a web application using a Single-Page-Application (SPA)
 approach (with React and React-Router), using NodeJS (serving static files, REST API 
 and WebSockets). There is only a single NodeJS instance, serving both the frontend 
@@ -14,7 +14,7 @@ between client and  server. Although the missing parts will be implemented soon 
 
 The given exam task was to create a quizgame which included authentication. 
 
-###Project structure
+### Project structure
 The project is separated between front-end and back-end and includes also other files and folders which defines the settings 
 of the project. 
 
@@ -24,7 +24,7 @@ up the projects. After Babel has finished compiling it will merge all the conten
 The output bundle.js is defined in a file called 'webpack.config.js'
 
  
-###Install and running application
+### Install and running application
 
  To run this application you need to have installed the latest Nodejs and can be downloaded 
  from here https://nodejs.org/en/download. Remember to include npm during installment.
@@ -38,7 +38,7 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  Once finished run "npm run dev" and open up localhost:8080
  
  
- ###Resources
+ ### Resources
  Code-snippets that has been barrowed has been referred to inside code
  
  
