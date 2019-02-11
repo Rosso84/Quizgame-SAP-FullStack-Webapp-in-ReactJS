@@ -11,7 +11,7 @@ const start = (server) => {
         console.log("A user connected..");
 
         socket.on("userId", (dto) => {
-            console.log('received username: ' + dto);
+            console.log('In socket_handler: received username: ' + dto);
             Db.createUser(dto);
         });
 
@@ -23,7 +23,7 @@ const start = (server) => {
 
         socket.on('disconnect', () => {
             console.log("User is disconnected.");
-            Db.resetAllUsers();
+            Db.resetDb();
         });
     });
 };

@@ -22,7 +22,7 @@ export class Quizgame extends React.Component {
             let newIndex = this.randomNewQuiz();
             this.setState({quizIndex: newIndex});
         } else {
-            alert('Wrong!');
+            alert('Wrong!, Try again!');
         }
     };
 

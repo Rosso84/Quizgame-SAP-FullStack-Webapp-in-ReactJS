@@ -5,7 +5,7 @@ import openSocket from 'socket.io-client';
 import {Home} from "./home";
 import {Quizgame} from "./quizgame";
 import {HighScorePage} from "./highscorepage";
-import {JoinOnline} from "./join_online";
+import {Lobby} from "./lobby";
 import {NotFound} from "./not_found";
 
 
@@ -22,7 +22,7 @@ export class App extends React.Component {
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/quizgame" component={Quizgame}/>
                         <Route exact path="/highscore" component={HighScorePage}/>
-                        <Route exact path="/join_online" component={JoinOnline}/>
+                        <Route exact path="/lobby" component={Lobby}/>
                         <Route component={NotFound}/>
                     </Switch>
                 </div>

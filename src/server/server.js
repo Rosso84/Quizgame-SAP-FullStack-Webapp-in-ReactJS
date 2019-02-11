@@ -1,4 +1,4 @@
-const app = require("./app");
+const app = require("./rest/app");
 const WsHandler =  require('./sockets/socket_handler');
 
 const server = require('http').Server(app);

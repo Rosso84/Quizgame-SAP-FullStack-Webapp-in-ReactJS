@@ -1,4 +1,7 @@
-/* Created by Roozbeh Moradi*/
+/* Created by Roozbeh Moradi
+*
+* */
+
 
 const users = [];
 
@@ -13,7 +16,6 @@ function userNameIsAvailable(id) {
     var count = users.length;
     for (var i = 0; i < count; i++) {
         if (users[i] === id) {
-            console.log('Username is already taken!');
             return false;
         }
     }
@@ -24,13 +26,15 @@ function createUser(id) {
     if (userNameIsAvailable(id)) {
         users.push(id);
         console.log('Username ' + id +' added to users');
+    }else {
+        console.log('username not available')
     }
 }
 
-function resetAllUsers() {
+function resetDb() {
     users.length = 0;
     console.log('Db reset, size = '+ users.length);
 }
 
-//Todo: isAvailable: usernameIsAvailable
-module.exports = {getUser, userNameIsAvailable, createUser, resetAllUsers};
+
+module.exports = {getUser, userNameIsAvailable, createUser, resetDb};

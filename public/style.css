@@ -1,19 +1,28 @@
 
-.container{
-    height: 1000px;
+.container {
+    height: 730px;
     position: fixed;
     background-color: darkorange;
     width: 100%;
 }
 
-.menu-div{
+.menu-div {
     position: relative;
-    margin-top: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 600px;
+    margin-top: 13%;
+    margin-left: 40%;
     height: 300px;
 
+}
+
+.input-field {
+    width: 200px;
+    height: 30px;
+}
+
+.btn_submit {
+    height: 32px;
+    width: fit-content;
+    background-color: green;
 }
 
 .go-to-page-btn {
@@ -26,17 +35,7 @@
     font-size: large;
 }
 
-.deactivated-btn{
-    position: relative;
-    width: 300px;
-    height: 50px;
-    background-color: grey;
-    border-width: 2px;
-    border-style: solid;
-    font-size: large;
-}
-
-.btn_quit{
+.btn_quit {
     font-size: xx-large;
 }
 
@@ -82,6 +81,7 @@
     margin-left: 600px;
     margin-top: 80px;
 }
+
 .name-list-in-join-room {
     height: fit-content;
     width: 290px;
@@ -91,10 +91,13 @@
     margin-left: 600px;
     margin-right: auto;
     margin-top: 0px;
-
 }
 
-.start_Game-online-btn{
+.no-users-online {
+    color: red;
+}
+
+.start_Game-online-btn {
     width: 310px;
     height: 60px;
     background-color: green;
@@ -112,11 +115,13 @@
     margin-left: auto;
     margin-right: auto;
 }
-.question-txt{
+
+.question-txt {
     text-align: center;
     font-size: x-large;
 }
-.answer-btn{
+
+.answer-btn {
     width: 600px;
     height: 50px;
     font-size: x-large;

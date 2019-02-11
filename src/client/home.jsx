@@ -9,7 +9,9 @@ export class Home extends React.Component {
 
         this.state = {
             userId: null,
-            isLoggedIn: false
+            password: null,
+            isLoggedIn: false,
+            errorMsg: null
         };
 
         this.alertLoginMsg = this.alertLoginMsg.bind(this);
@@ -20,21 +22,35 @@ export class Home extends React.Component {
 
     handleOnlineClick() {
         let currentUserId = this.state.userId;
-        if (currentUserId !== null && currentUserId !== undefined){
-            this.socket.emit("userId", this.state.userId);  //sends userID to Server through socket
+        let currentPassword = this.state.password;
+        let errorMsg = this.state.errorMsg;
+        if (errorMsg !== undefined && errorMsg !== null){
+            console.log('errormsg is undefined or null');
+        } else {
+            console.log('errormsg is not undefined or null');
+        }
+
+        if (currentUserId !== null && currentUserId !== undefined
+            &&
+            currentPassword !== null && currentPassword !== undefined) {
+            this.socket.emit("userId", this.state.userId);
             this.setState({isLoggedIn: true});
-        }else {
-            alert('Field cannot be emty.')
+        } else {
+            alert('Enter a Valid username and password');
         }
     };
 
-    alertLoginMsg(){
-        alert('To play online you need to signup!')
+    alertLoginMsg() {
+        alert('To play online you need to sign up!')
     }
 
     onUserIdChange(event) {
         this.setState({userId: event.target.value});
     };
+
+    onPasswordChange(event) {
+        this.setState({password: event.target.value})
+    }
 
     componentDidMount() {
         this.socket = openSocket(window.location.origin);
@@ -43,7 +59,7 @@ export class Home extends React.Component {
     renderWelcomeMessage() {
         return (
             <div>
-                <h1>Welcome {this.state.userId}!</h1>
+                <h1>Welcome {this.state.userId}!<br/>You are now online</h1>
             </div>
         )
     }
@@ -52,10 +68,14 @@ export class Home extends React.Component {
         return (
             <div>
                 <div>
-                    <p>Choose a userName:</p>
-                    <input type="text" className={"input-"} value={this.state.userId}
+
+                    <input type="text" className={"input-field"} value={this.state.userId} placeholder={"Username"}
                            onChange={this.onUserIdChange}/>
-                    <button className="btn_submit" onClick={() => this.handleOnlineClick()}>use</button>
+                    <br/>
+                    <input type="text" className={"input-field"} value={this.state.password} placeholder={"Password"}
+                           onChange={this.onPasswordChange}/>
+                    <br/>
+                    <button className="btn_submit" onClick={() => this.handleOnlineClick()}>Submit</button>
                     <h2 className="choose_txt">Play offline</h2>
                 </div>
             </div>
@@ -67,11 +87,11 @@ export class Home extends React.Component {
         if (!loggedIn) {
             return (
                 this.renderLogInMenu()
-            );
+            )
         } else {
             return (
                 this.renderWelcomeMessage()
-            );
+            )
         }
     }
 
@@ -92,11 +112,11 @@ export class Home extends React.Component {
                     <br/>
                     {
                         loggedIn ?
-                            (<Link to={"/join_online"}>
+                            (<Link to={"/lobby"}>
                                 <button className={"go-to-page-btn"}>online</button>
                             </Link>)
                             :
-                            (<button className={"deactivated-btn"} onClick={this.alertLoginMsg} >Online</button>)
+                            (<button className={"go-to-page-btn"} onClick={this.alertLoginMsg}>Online</button>)
                     }
                 </div>
             </div>

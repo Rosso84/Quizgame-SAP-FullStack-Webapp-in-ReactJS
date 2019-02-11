@@ -24,20 +24,20 @@ let counter = 0;
 const userNames = [];
 
 
-app.get('/api/register', (req, res) => {
+app.get('/api/users', (req, res) => {
 
-    const since = req.query["since"];
+    const query = req.query["user"];
 
     const data = userNames;
 
-    if (since !== undefined && since !== null) {
-        res.json(data.filter(m => m.id > since));
+    if (query !== undefined && query !== null) {
+        res.json(data.filter(m => m.id > query));
     } else {
         res.json(data);
     }
 });
 
-app.post('/api/register', (req, res) => {
+app.post('/api/result', (req, res) => {
 
     const dto = req.body;
 
@@ -51,7 +51,7 @@ app.post('/api/register', (req, res) => {
 
 
 //handling 404
-app.use((req, res, next) => {
+app.use((req, res) => {
     res.sendFile(path.resolve(__dirname, '..', '..', 'public', 'index.html'));
 });
 
