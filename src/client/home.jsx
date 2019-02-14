@@ -17,6 +17,11 @@ export class Home extends React.Component {
         this.alertLoginMsg = this.alertLoginMsg.bind(this);
         this.onUserIdChange = this.onUserIdChange.bind(this);
         this.handleOnlineClick = this.handleOnlineClick.bind(this);
+        this.onPasswordChange = this.onPasswordChange.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.renderWelcomeMessage = this.renderWelcomeMessage.bind(this);
+        this.renderLogInMenu = this.renderLogInMenu.bind(this);
+        this.renderGreeting = this.renderGreeting.bind(this);
     }
 
 
@@ -24,15 +29,15 @@ export class Home extends React.Component {
         let currentUserId = this.state.userId;
         let currentPassword = this.state.password;
         let errorMsg = this.state.errorMsg;
-        if (errorMsg !== undefined && errorMsg !== null){
+     /*   if (errorMsg !== undefined && errorMsg !== null){
             console.log('errormsg is undefined or null');
         } else {
             console.log('errormsg is not undefined or null');
-        }
+        }*/
 
         if (currentUserId !== null && currentUserId !== undefined
-            &&
-            currentPassword !== null && currentPassword !== undefined) {
+            /*&&
+            currentPassword !== null && currentPassword !== undefined*/) {
             this.socket.emit("userId", this.state.userId);
             this.setState({isLoggedIn: true});
         } else {
@@ -72,9 +77,9 @@ export class Home extends React.Component {
                     <input type="text" className={"input-field"} value={this.state.userId} placeholder={"Username"}
                            onChange={this.onUserIdChange}/>
                     <br/>
-                    <input type="text" className={"input-field"} value={this.state.password} placeholder={"Password"}
+               {/*     <input type="text" className={"input-field"} value={this.state.password} placeholder={"Password"}
                            onChange={this.onPasswordChange}/>
-                    <br/>
+                    <br/>*/}
                     <button className="btn_submit" onClick={() => this.handleOnlineClick()}>Submit</button>
                     <h2 className="choose_txt">Play offline</h2>
                 </div>

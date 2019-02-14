@@ -8,18 +8,16 @@ const users = [];
 
 function getUser(id) {
      user = users[id];
-    console.log('getuser() returned user: ' + user);
+    console.log('getUser() method returned user: ' + user);
     return user;
 }
 
 function userNameIsAvailable(id) {
-    var count = users.length;
-    for (var i = 0; i < count; i++) {
-        if (users[i] === id) {
-            return false;
-        }
+    var size = users.length;
+    for (var i = 0; i < size; i++) {
+        return users[i] !== id;
     }
-    return true;
+
 }
 
 function createUser(id) {
@@ -27,13 +25,14 @@ function createUser(id) {
         users.push(id);
         console.log('Username ' + id +' added to users');
     }else {
-        console.log('username not available')
+        /*alert('This username is allready taken');*/
+        console.log('username not available');
     }
 }
 
 function resetDb() {
     users.length = 0;
-    console.log('Db reset, size = '+ users.length);
+    console.log('Db reset, list of users is empty');
 }
 
 

@@ -8,11 +8,10 @@ const start = (server) => {
     io = socketIo(server);
 
     io.on('connection', function (socket) {
-        console.log("A user connected..");
-
         socket.on("userId", (dto) => {
             console.log('In socket_handler: received username: ' + dto);
             Db.createUser(dto);
+            console.log("A user connected..");
         });
 
 

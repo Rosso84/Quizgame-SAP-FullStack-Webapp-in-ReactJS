@@ -21,7 +21,7 @@ app.use(express.static('public'));
 
 let counter = 0;
 
-const userNames = [];
+const userNames = ['Arne', 'Per', 'Arild', 'Ken'];
 
 
 app.get('/api/users', (req, res) => {

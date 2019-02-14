@@ -7,14 +7,14 @@ export class Lobby extends React.Component {
 
         this.state = {
             loggedInUsers: []
-        }
+        };
 
         this.componentDidMount = this.componentDidMount.bind(this);
         this.componentWillUnmount = this.componentWillUnmount.bind(this);
-        this.fetchUsers = this.fetchUsers.bind(this);
+        this.fetchUsers = this.fetchUsers.bind(this);/*
         this.renderEmptyListOfPlayers = this.renderEmptyListOfPlayers(this);
         this.displayListOfUsers = this.displayListOfUsers(this);
-        this.renderPlayersOnline = this.renderPlayersOnline(this);
+        this.renderPlayersOnline = this.renderPlayersOnline(this);*/
     }
 
     componentDidMount() {
@@ -101,7 +101,6 @@ export class Lobby extends React.Component {
             return (
                 this.renderEmptyListOfPlayers()
             );
-
         }
     }
 
@@ -121,5 +120,7 @@ export class Lobby extends React.Component {
 
 }
 /*
+
 export default withRouter(Lobby);
 */
+
