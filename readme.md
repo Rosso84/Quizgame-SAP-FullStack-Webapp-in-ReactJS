@@ -7,12 +7,10 @@ approach (with React and React-Router), using NodeJS (serving static files, REST
 and WebSockets). There is only a single NodeJS instance, serving both the frontend 
 (e.g., HTML, CSS and bundle.js) and the backend (business logic, REST API and WebSockets). 
 The main goal of the exam is to show the understanding of the different technologies learned in class.
+The given exam task was to create a quizgame withous the use of a real database , but only an inmemory  i.e a Map.
 
-At the moment this project does not include REST API , but it does
-include React and React-routing using NodeJS with some communication 
-between client and  server. Although the missing parts will be implemented soon in future.
-
-The given exam task was to create a quizgame which included authentication. 
+At the moment this project includes REST API, routing with some communication 
+between client and server through sockets. Although the missing parts is under developement. 
 
 ### Project structure
 The project is separated between front-end and back-end and includes also other files and folders which defines the settings 
