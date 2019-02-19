@@ -10,13 +10,13 @@ The main goal of the exam is to show the understanding of the different technolo
 The given exam task was to create a quizgame withous the use of a real database , but only an inmemory  i.e a Map.
 
 At the moment this project includes REST API, routing with some communication 
-between client and server through sockets. Although the missing parts is under developement. 
+between client and server through sockets and some Restfull API. Although the missing parts is under developement. 
 
 ### Project structure
 The project is separated between front-end and back-end and includes also other files and folders which defines the settings 
 of the project. 
 
-The front-end, which is the clients side,  is written in .jsx which vil later be compiled into regular Javascript.
+The front-end, which is the clients side,  is written in .jsx which will later be compiled into regular Javascript.
 The module that handles this is called Babel and is installed inside the folder  /node_modules among many other modules that builds 
 up the projects. After Babel has finished compiling it will merge all the contents into a bundle.js inside /public folder.
 The output bundle.js is defined in a file called 'webpack.config.js'
@@ -33,10 +33,7 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  Now we need to install the projects modules. The node modules and their versions are defined inside 
  the package.json file. Open up a Cli and navigate to the root folder of the project and type 'npm install' to install.
  
- Once finished run "npm run dev" and open up localhost:8080
+ Once finished run "npm run dev" and go to localhost:8080 on a browser.
  
- 
- ### Resources
- Code-snippets that has been barrowed has been referred to inside code
- 
+
  
