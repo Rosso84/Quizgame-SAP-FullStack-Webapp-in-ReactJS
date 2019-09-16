@@ -32,8 +32,10 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  
  Now we need to install the projects modules. The node modules and their versions are defined inside 
  the package.json file. Open up a Cli and navigate to the root folder of the project and type 'npm install' to install.
- If you get any errors try to create a folder name it 'node_modules'. This will be filled with all the modules needed to run the 
+ If you get any errors:
+ 1. Try to create a folder and name it 'node_modules'.This will be filled with all the modules needed to run the 
  applicaiton which is reffered to in package.json. 
+ 2. Try to delete packa-Lock file and install again.
  
  Once finished run "npm run dev" and go to localhost:8080 on a browser.
  
