@@ -1,7 +1,7 @@
 #useful commands
 #step one:  docker build -t <nameTagOfYourChoice> 
 #step two:  docker run chosenNametag -p <choose a port such as 8080> 
-#ste three:  docker run nametag .  (dont miss the dot)    
+#ste three:  docker run nametag
 
 
 FROM node:latest
