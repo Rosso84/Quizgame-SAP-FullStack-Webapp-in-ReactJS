@@ -42,7 +42,7 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  
 Once finished run 'yarn run dev' or 'yarn run start' to run it locally, then go to localhost:8080 on a browser.
  
-###Docker
+## Docker
 To build a container image and run it locally with Docker navigate to root folder and follow these command steps in bash:
 1. docker build -t -nameTagOfYourChoice- .  (dont miss the dot)  
 2. docker run chosenNametag -p <choose a port such as 8080> 
@@ -54,7 +54,7 @@ docker system prune -a
 
 docker volume prune
 
-###usefull docker commands
+### Usefull docker commands
 
 docker images  (lists all images)
 
