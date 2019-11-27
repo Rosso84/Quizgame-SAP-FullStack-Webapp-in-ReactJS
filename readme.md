@@ -48,4 +48,12 @@ To build a container image and run it locally with Docker navigate to root folde
 2. docker run chosenNametag -p <choose a port such as 8080> 
 3. docker run nametag
 4.navigate to https://localhost:8080 in a browser
+5.remember to remove all afterwards with commands:
+docker system prune -a
+docker volume prune
+
+usefull docker commands
+docker images  (lists all images)
+docker ps  (lists all running images with their id's)
+docker stop id  (stops running images)
  
