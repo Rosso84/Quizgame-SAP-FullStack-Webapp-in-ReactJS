@@ -40,7 +40,7 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  applicaiton which is reffered to in package.json. 
  2. Try to delete packa-Lock file and install again.
  
- Once finished run 'yarn run dev' or 'yarn run start' to run it locally, then go to localhost:8080 on a browser.
+Once finished run 'yarn run dev' or 'yarn run start' to run it locally, then go to localhost:8080 on a browser.
  
 ###Docker
 To build a container image and run it locally with Docker navigate to root folder and follow these command steps in bash:
@@ -49,11 +49,16 @@ To build a container image and run it locally with Docker navigate to root folde
 3. docker run nametag
 4.navigate to https://localhost:8080 in a browser
 5.remember to remove all afterwards with commands:
+
 docker system prune -a
+
 docker volume prune
 
-usefull docker commands
+###usefull docker commands
+
 docker images  (lists all images)
+
 docker ps  (lists all running images with their id's)
+
 docker stop id  (stops running images)
  
