@@ -12,7 +12,7 @@ The given exam task was to create a quizgame without the use of a real database,
 At the moment this project includes REST API, routing with some communication 
 between client and server through sockets and some Restfull API. Although the missing parts is under developement.
 
-Extra: The project includes a Dockerfile for the application to create a containerized image for it to be used in infrastructure servicessuch as e.g Container registries or Kubernetes for cloud deployments. 
+Extra: The project includes a Dockerfile for the application to create a containerized image for it to be used in a infrastructure services such as e.g Container registries or Kubernetes for cloud deployments in Azure or AWS. 
 
 
 ### Project structure
