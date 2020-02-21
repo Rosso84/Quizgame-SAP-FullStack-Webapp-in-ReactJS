@@ -1,6 +1,6 @@
 import React from "react";
-import {MyHomeLink} from "./my_home_link";
-import {quizzes} from "./quizzes"
+import { MyHomeLink } from "./my_home_link";
+import { quizzes } from "./quizzes"
 
 
 export class Quizgame extends React.Component {
@@ -9,18 +9,51 @@ export class Quizgame extends React.Component {
         super(props);
 
         this.state = {
+            loggedInUsers: [],
             quizIndex: 0,
-            loggedInUsers: []
-        };
+            correct: 0,
+            minutes: 0,
+            seconds: 5
+        }/* 
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentWillMount = this.componentWillMount.bind(this); */
     };
+
+    componentDidMount() {
+        this.myInterval = setInterval(() => {
+            const { seconds, minutes } = this.state
+
+            if (seconds > 0) {
+                this.setState(({ seconds }) => ({
+                    seconds: seconds - 1
+                }))
+            }
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(this.myInterval)
+                } else {
+                    this.setState(({ minutes }) => ({
+                        minutes: minutes - 1,
+                        seconds: 59
+                    }))
+                }
+            }
+        }, 1000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.myInterval)
+    }
 
     onAnswerClick(e, i) {
         const chosenBtn = e.target.id;
-
+        let currrentCorrect = this.state.correct;
         if (chosenBtn.toString() === i.toString()) {
             alert('Correct!');
+            this.setState({ correct: currrentCorrect + 1 },
+                console.log('incremented correct answered'))
             let newIndex = this.randomNewQuiz();
-            this.setState({quizIndex: newIndex});
+            this.setState({ quizIndex: newIndex });
         } else {
             alert('Wrong!, Try again!');
         }
@@ -31,20 +64,17 @@ export class Quizgame extends React.Component {
             <div>
                 <h2 className="question-txt"> {quiz.question}</h2>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                        id={0}>{quiz.answer_0}</button>
+                    id={0}>{quiz.answer_0}</button>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                        id={1}>{quiz.answer_1}</button>
+                    id={1}>{quiz.answer_1}</button>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                        id={2}>{quiz.answer_2}</button>
+                    id={2}>{quiz.answer_2}</button>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                        id={3}>{quiz.answer_3}</button>
+                    id={3}>{quiz.answer_3}</button>
             </div>
         );
     }
 
-    /**
-     *This part is barrowed from a lecture made by Andrea Arcuri
-     * https://github.com/arcuri82/pg6300/blob/master/les01/quiz/code.js*/
     randomNewQuiz() {
         let currentQuizIndex = this.state.quizIndex;
         let index = Math.floor(Math.random() * quizzes.length);
@@ -56,19 +86,32 @@ export class Quizgame extends React.Component {
         return index;
     }
 
-    render() {
-
+    displayGameBoard() {
         let index = this.state.quizIndex;
-
         const quiz = quizzes[index];
-
+        const { minutes, seconds } = this.state
         return (
-            <div className={"container"}>
-                <MyHomeLink/>
-                <h1 className="title">Quizmaster</h1>
+            <div>
                 <div className="gameBoard">
                     {this.displayQuiz(quiz)}
                 </div>
+                <div className="correct-answers-and-timer-div">
+                    <h2 className="correct-answers">Correct: {this.state.correct}</h2>
+                    {minutes === 0 && seconds === 0
+                        ? <h1>Game Over!</h1>
+                        : <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                    }
+                </div>
+            </div>
+        );
+    }
+
+    render() {
+        return (
+            <div className={"container"}>
+                <MyHomeLink />
+                <h1 className="title">Quizmaster</h1>
+                {this.displayGameBoard()}
             </div>
         );
     }

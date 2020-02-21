@@ -1,6 +1,6 @@
 
 .container {
-    height: 730px;
+    height: 930px;
     position: fixed;
     background-color: darkorange;
     width: 100%;
@@ -126,5 +126,25 @@
     height: 50px;
     font-size: x-large;
 }
+
+/**Timer and correct answers*/
+
+.correct-answers-and-timer-div{
+    position: absolute;
+    top: 500px;
+    right: 650px;
+    width: 600px;
+    border-width: 5px;
+    border-style: solid;
+    background-color: whitesmoke;
+    height: 250px;
+    width: 600px;
+}
+
+.correct-answers{
+    text-align: center;
+    font-size: xxx-large;
+}
+
 
 
