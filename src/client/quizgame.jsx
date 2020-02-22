@@ -13,12 +13,21 @@ export class Quizgame extends React.Component {
             quizIndex: 0,
             correct: 0,
             minutes: 0,
-            seconds: 5
-        }/* 
-        this.componentDidMount = this.componentDidMount.bind(this);
-        this.componentWillMount = this.componentWillMount.bind(this); */
+            seconds: 30
+        }
     };
 
+    render() {
+        return (
+            <div className={"container"}>
+                <MyHomeLink />
+                <h1 className="title">Quizmaster</h1>
+                {this.displayGameBoard()}
+            </div>
+        );
+    }
+
+    //timer
     componentDidMount() {
         this.myInterval = setInterval(() => {
             const { seconds, minutes } = this.state
@@ -41,6 +50,7 @@ export class Quizgame extends React.Component {
         }, 1000)
     }
 
+    //timer
     componentWillUnmount() {
         clearInterval(this.myInterval)
     }
@@ -60,17 +70,18 @@ export class Quizgame extends React.Component {
     };
 
     displayQuiz(quiz) {
+        const { minutes, seconds } = this.state
         return (
             <div>
                 <h2 className="question-txt"> {quiz.question}</h2>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                    id={0}>{quiz.answer_0}</button>
+                    id={0} disabled={minutes === 0 && seconds === 0}>{quiz.answer_0}</button>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                    id={1}>{quiz.answer_1}</button>
+                    id={1} disabled={minutes === 0 && seconds === 0}>{quiz.answer_1}</button>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                    id={2}>{quiz.answer_2}</button>
+                    id={2} disabled={minutes === 0 && seconds === 0}>{quiz.answer_2}</button>
                 <button className="answer-btn" onClick={e => this.onAnswerClick(e, quiz.indexOfRightAnswer)}
-                    id={3}>{quiz.answer_3}</button>
+                    id={3} disabled={minutes === 0 && seconds === 0}>{quiz.answer_3}</button>
             </div>
         );
     }
@@ -97,30 +108,13 @@ export class Quizgame extends React.Component {
                 </div>
                 <div className="correct-answers-and-timer-div">
                     <h2 className="correct-answers">Correct: {this.state.correct}</h2>
-                    {minutes === 0 && seconds === 0
-                        ? <h1>Game Over!</h1>
-                        : <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+                    {minutes === 0 && seconds === 0 ? 
+                        <h1 className="gameover-txt">Game Over!</h1>
+                        : 
+                        <h1 className="timer-txt">Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
                     }
                 </div>
             </div>
         );
     }
-
-    render() {
-        return (
-            <div className={"container"}>
-                <MyHomeLink />
-                <h1 className="title">Quizmaster</h1>
-                {this.displayGameBoard()}
-            </div>
-        );
-    }
 }
-
-
-
-
-
-
-
-

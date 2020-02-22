@@ -5,7 +5,7 @@ export const MyHomeLink = () => {
 
     return (
         <Link to={"/"}>
-            <button className={"btn_quit"}>Leave</button>
+            <button className={"btn_quit"}>Home</button>
         </Link>
     );
 };
