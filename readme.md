@@ -44,13 +44,13 @@ Once finished run 'yarn run dev' or 'yarn run start' to run it locally, then go 
  
 ## Docker
 To build a container image and run it locally with Docker navigate to root folder and follow these command steps in bash:
-1. docker image build -t -nameTagOfYourChoice- .  (dont miss the dot)  
-2. docker run -p 8080:8080 -td tagname 
-3. docker run nametag
+1. <docker image build -t -nameTagOfYourChoice- .>  (dont miss the dot)  
+2. <docker run -p 8080:8080 -td tagname> 
+3. <docker run nametag>
 4. open a browser and go to https://localhost:8080
-5. remember to remove all afterwards with commands:
-
-docker system prune -a
+5.Now that you have managed to run this locally in a containerised environment you can deploy this to container service such as Azure Container Registry and kubernetes using kubeCtl or ACI. Tutorails for the this is to be found at microsofts documentations in az-203. 
+6. Remember to remove all images afterwards with commands:
+<docker system prune -a>
 
 docker volume prune
 
