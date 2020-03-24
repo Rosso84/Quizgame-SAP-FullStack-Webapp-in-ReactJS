@@ -27,18 +27,18 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  
 ### Install and running application
 
- To run this application you need to have installed the latest Nodejs runtime downloaded from 
- from https://nodejs.org/en/download. Remember to include npm during installment.
+ To run this application you need to have installed the latest Nodejs runtime downloaded 
+ from https://nodejs.org/en/download.
  
  The next tool you need is a cli such as GitBash (if you are on 
- a windows machine) to run 'npm' or yarn commands. 
+ a windows machine) to run 'npm' or yarn commands. If the installment of NodeJS does not include npm or yarn simple run command 
  
  Now we need to install the projects modules. The node modules and their versions are defined inside 
  the package.json file. Open up a Cli and navigate to the root folder of the project and type 'npm install' or 'yarn install' to install.
  If you get any errors:
- 1. Try to create a folder and name it 'node_modules'.This will be filled with all the modules needed to run the 
- applicaiton which is reffered to in package.json. 
+ 1. Try to create a new folder and name it 'node_modules' if allready exists in root.This will be filled with all the modules needed to run the applicaiton which is implemented in package.json. 
  2. Try to delete package-Lock file and install again.
+ 3. install yarn : https://classic.yarnpkg.com/en/docs/install/#windows-stable
  
 Once finished run 'yarn run dev' or 'yarn run start' to run it locally, then go to localhost:8080 on a browser.
  
