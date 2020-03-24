@@ -38,7 +38,7 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  If you get any errors:
  1. Try to create a folder and name it 'node_modules'.This will be filled with all the modules needed to run the 
  applicaiton which is reffered to in package.json. 
- 2. Try to delete packa-Lock file and install again.
+ 2. Try to delete package-Lock file and install again.
  
 Once finished run 'yarn run dev' or 'yarn run start' to run it locally, then go to localhost:8080 on a browser.
  
