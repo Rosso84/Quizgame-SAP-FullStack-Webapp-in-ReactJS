@@ -28,18 +28,17 @@ The output bundle.js is defined in a file called 'webpack.config.js'
 ### Install and running application
 
  To run this application you need to have installed the latest Nodejs runtime downloaded 
- from https://nodejs.org/en/download.
+ from https://nodejs.org/en/download.  If the installment of NodeJS does not include npm or yarn simply follow these steps:
+ https://classic.yarnpkg.com/en/docs/install/#windows-stable.
  
  The next tool you need is a cli such as GitBash (if you are on 
- a windows machine) to run 'npm' or yarn commands. If the installment of NodeJS does not include npm or yarn simply follow these steps:
- https://classic.yarnpkg.com/en/docs/install/#windows-stable.
+ a windows machine) to run 'npm' or yarn commands.
  
  Now we need to install the projects modules. The node modules and their versions are defined inside 
  the package.json file. Open up a Cli and navigate to the root folder of the project and type 'npm install' or 'yarn install' to install.
  If you get any errors:
  1. Try to create a new folder and name it 'node_modules' if allready exists in root.This will be filled with all the modules needed to run the applicaiton which is implemented in package.json. 
  2. Try to delete package-Lock file and install again.
- 3. install yarn : https://classic.yarnpkg.com/en/docs/install/#windows-stable
  
 Once finished run 'yarn run dev' or 'yarn run start' to run it locally, then go to localhost:8080 on a browser.
  
@@ -49,11 +48,10 @@ To build a container image and run it locally with Docker navigate to root folde
 2. <docker run -p 8080:8080 -td -yourNameTag-> 
 3. <docker run -yourNameTag->
 4. open a browser and go to https://localhost:8080
-5.Now that you have managed to run this locally in a containerised environment you can deploy this to container service such as Azure Container Registry and kubernetes using kubeCtl or ACI. Tutorails for the this is to be found at microsofts documentations in az-203. 
+5.Now that you have managed to run this locally in a containerized environment you can deploy this to container service such as Azure Container Registry and kubernetes using kubeCtl or ACI. Tutorails for the this is to be found at microsofts documentations in az-203. 
 6. Remember to remove all images afterwards with commands:
-<docker system prune -a>
-
-docker volume prune
+<docker system prune -a> and 
+<docker volume prune>
 
 ### Usefull docker commands
 
