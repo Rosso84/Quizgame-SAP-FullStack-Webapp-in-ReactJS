@@ -9,9 +9,6 @@ and WebSockets). There is only a single NodeJS instance, serving both the fronte
 The main goal of the exam is to show the understanding of the different technologies learned in class.
 The given exam task was to create a quizgame without the use of a real database, but only an inmemory  i.e a Map.
 
-At the moment this project includes routing with some communication 
-between client and server through sockets and some Restfull API. Although the missing parts is under developement.
-
 Extra: The project includes a Dockerfile for the application to create a containerized image for it to be used in an infrastructure services such as e.g Container registries or Kubernetes for cloud deployments in Azure or AWS. 
 
 
