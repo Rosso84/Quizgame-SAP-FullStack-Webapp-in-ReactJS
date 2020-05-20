@@ -25,7 +25,7 @@ up the projects. After Babel has finished compiling it will merge all the conten
 The output bundle.js is defined in a file called 'webpack.config.js'
 
  
-### Install and running application
+### Installment and running of application
 
  To run this application you need to have installed the latest Nodejs runtime downloaded 
  from https://nodejs.org/en/download.  If the installment of NodeJS does not include npm or yarn simply follow these steps:
