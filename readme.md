@@ -9,10 +9,10 @@ and WebSockets). There is only a single NodeJS instance, serving both the fronte
 The main goal of the exam is to show the understanding of the different technologies learned in class.
 The given exam task was to create a quizgame without the use of a real database, but only an inmemory  i.e a Map.
 
-At the moment this project includes REST API, routing with some communication 
+At the moment this project includes routing with some communication 
 between client and server through sockets and some Restfull API. Although the missing parts is under developement.
 
-Extra: The project includes a Dockerfile for the application to create a containerized image for it to be used in a infrastructure services such as e.g Container registries or Kubernetes for cloud deployments in Azure or AWS. 
+Extra: The project includes a Dockerfile for the application to create a containerized image for it to be used in an infrastructure services such as e.g Container registries or Kubernetes for cloud deployments in Azure or AWS. 
 
 
 ### Project structure
@@ -31,7 +31,8 @@ The output bundle.js is defined in a file called 'webpack.config.js'
  from https://nodejs.org/en/download.
  
  The next tool you need is a cli such as GitBash (if you are on 
- a windows machine) to run 'npm' or yarn commands. If the installment of NodeJS does not include npm or yarn simple run command 
+ a windows machine) to run 'npm' or yarn commands. If the installment of NodeJS does not include npm or yarn simply follow these steps:
+ https://classic.yarnpkg.com/en/docs/install/#windows-stable.
  
  Now we need to install the projects modules. The node modules and their versions are defined inside 
  the package.json file. Open up a Cli and navigate to the root folder of the project and type 'npm install' or 'yarn install' to install.
